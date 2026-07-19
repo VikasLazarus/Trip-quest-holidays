@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>{{ page.title }}</title>
+  <link rel="icon" type="image/x-icon" href="{{ site.url }}/assets/images/favicon.ico">
+  <meta name="description"
+    content="{{ page.discription }}">
+  <meta name="keywords"
+    content="{{ page.keywords }}">
+  <meta name="author" content="Trip Quest Holidays">
+ <meta name="theme-color" content="#ffffff">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ site.url }}/assets/css/main.css">
+
+<script type="application/ld+json">
+{
+    "@context" : "https://schema.org",
+    "@type" : "WebSite",
+    "name" : "Tourist Hill Travels",
+    "url" : "https://touristhill.in/"
+}
+</script>
+  <style>
+    #Main svg {
+      fill: #757575;
+    }
+
+    .slider-container {
+        overflow: hidden;
+      position: relative;
+      
+      width: 100%;
+    }
+
+    .slider-track {
+      display: flex;
+      gap: 10px; 
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      width: 100%;
+      border-radius: 8px;
+      scrollbar-width: none; 
+    }
+
+    .slider-track::-webkit-scrollbar {
+      display: none; 
+    }
+
+    .slide {
+      flex: 0 0 var(--slide-width, 250px); 
+      scroll-snap-align: start; 
+      display: flex;
+     
+    }
+
+    .slider-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.6);
+      color: #484848;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      z-index: 10;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background 0.2s, opacity 0.2s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .slider-btn:hover { background: #c31432; color: #ffffff; }
+    .prev-btn { left: -0px; } 
+    .next-btn { right: -0px; }
+
+    .slider-btn.disabled {
+      opacity: 0.0;
+      pointer-events: none; 
+    }
+
+    /* NEW: Hide navigation buttons on screens smaller than 768px */
+    @media (max-width: 768px) {
+      .slider-btn {
+        display: none;
+      }
+    }
+
+  </style>
+<style>
+  /* Keeps the extra text hidden by default */
+  #more {
+    display: none;
+  }
+
+  /* The class applied via JavaScript to stick the button to the bottom */
+  .fixed-bottom {
+    position: fixed !important; /* Forces it to override standard flow */
+    bottom: 20px;
+    right: 20px; /* Adjust this to center/left if you prefer */
+    z-index: 1000; /* Ensures it stays on top of other content */
+    border-radius: 30px;
+    background-color: white;
+    padding: 4px 22px;
+    /* Optional: Adding a shadow makes it stand out when floating */
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.3); 
+  }
+</style>
+  
+  <style>
+    .w3-round {
+      border-radius: 30px;
+    }
+    a {
+      text-decoration: none;
+    }
+
+   
+
+    .w3-content {
+      max-width: 1100px;
+    }
+
+
+    .swiper {
+      width: 100%;
+      height: 100%;
+    }
+
+
+
+
+    .slide-1 {
+      width: fit-content;
+    }
+
+    .slide-2 {
+
+
+
+      height: 530px;
+      width: 320px;
+      border-radius: 10px;
+    }
+
+
+  </style>
+</head>
+
+<body>
+
+
+
+   <!--end-->
+<style>
+   .aa {
+      overflow: hidden;
+      width: 15px;
+      height: 36px;
+      transform: skewX(-20deg);
+      background-image: linear-gradient(to right, #ffffff, #ffffff00, #ffffff, #ffffff);
+      opacity: 0.3;
+      position: absolute;
+      animation-name: example;
+      animation-duration: 6s;
+      animation-timing-function: linear;
+      animation-delay: 1s;
+      animation-iteration-count: infinite;
+      animation-direction: right;
+    }
+
+    @keyframes example {
+      0% {
+        left: 0%;
+        top: 0px;
+        opacity: 0;
+      }
+
+      25% {
+        left: 25%;
+        top: 0px;
+        opacity: 0.3;
+      }
+
+      50% {
+        left: 50%;
+        top: 0px;
+        opacity: 0.5;
+      }
+
+      75% {
+        left: 75%;
+        top: 0px;
+        opacity: 0.3;
+      }
+
+      100% {
+        left: 90%;
+        top: 0px;
+        opacity: 0;
+      }
+    }
+    #more {display: none;}
+    .HR {
+  margin: 30px 0px;
+    display: flex;
+    align-items: center;
+    min-height: 1px;
+    min-width: 100%;
+    background: linear-gradient(270deg, hsla(0, 0%, 100%, .05) -.13%, hsla(0, 0%, 88%, .05) 0, #e0e0e0 49.17%, hsla(0, 0%, 88%, .05));
+}
+@media (max-width: 576px) {
+    .HR {
+        min-width: fit-content;
+        margin: 30px 0;
+    }
+}
+#Main svg { fill: #a0a0a0; }
+</style>
+
+{% include form1.html %}
+{% include form2.html %}
+<!-- Navbar -->
+{% include nav.html %}
+
+
+
+
+  <!-- Header -->
+
+
+
+
+ 
+
+<div class="w3-row-padding w3-padding-16 w3-padding w3-content">
+    <div>
+      <div class="w3-row w3-white">
+        
+         <div class="w3-row w3-text-gray w3-margin-bottom" >
+   <span class="w3-hover-text-teal"> <a href="https://tripquestholidays.in">
+    <div class="w3-col" style="width: 30px; padding-top: 2px; padding-right: 3px;">
+      <svg width="22px" height="22px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 12.2039C2 9.91549 2 8.77128 2.5192 7.82274C3.0384 6.87421 3.98695 6.28551 5.88403 5.10813L7.88403 3.86687C9.88939 2.62229 10.8921 2 12 2C13.1079 2 14.1106 2.62229 16.116 3.86687L18.116 5.10812C20.0131 6.28551 20.9616 6.87421 21.4808 7.82274C22 8.77128 22 9.91549 22 12.2039V13.725C22 17.6258 22 19.5763 20.8284 20.7881C19.6569 22 17.7712 22 14 22H10C6.22876 22 4.34315 22 3.17157 20.7881C2 19.5763 2 17.6258 2 13.725V12.2039Z" fill="#484848"></path>
+<path d="M9 17.25C8.58579 17.25 8.25 17.5858 8.25 18C8.25 18.4142 8.58579 18.75 9 18.75H15C15.4142 18.75 15.75 18.4142 15.75 18C15.75 17.5858 15.4142 17.25 15 17.25H9Z" fill="#FFFFFF"></path>
+</svg></div>
+<div class="w3-rest" style="padding-bottom: 0px; padding-top: 2px; overflow: hidden;
+   display: -webkit-box;
+   -webkit-line-clamp: 1;
+           line-clamp: 1; 
+   -webkit-box-orient: vertical;">
+    Home</a></span> / <span class="w3-hover-text-teal"> {{ page.title }}</span></div>
+</div>
+        
+<div style="margin-top: 40px;">
+        <h1 class="w3-text-dark-gray w3-margin-top" style="font-size: 28px;"><strong>{{ page.title }}</strong></h1>
+        <div class="w3-row">
+          
+            <style>
+              /* Trigger button style */
+.share-trigger-btn {
+ 
+  cursor: pointer;
+  background-color: white;
+  
+  border: none;
+  border-radius: 5px;
+}
+
+/* Modal Overlay - Hidden by default */
+.share-modal-overlay {
+  display: none; /* Hidden */
+  position: fixed; 
+  z-index: 1000; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  background-color: rgba(0,0,0,0.5); /* Dim background */
+  align-items: center;
+  justify-content: center;
+}
+
+/* Modal Box */
+.share-modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Header */
+.share-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.share-modal-header h3 { margin: 0; }
+.close-modal {
+  font-size: 28px;
+  cursor: pointer;
+  color: #666;
+}
+
+/* Share Buttons Grid */
+.share-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.share-btn {
+  display: block;
+  padding: 12px;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  border-radius: 15px;
+  font-weight: bold;
+}
+/* Brand Colors */
+.wa { background-color: #25D366; }
+.fb { background-color: #1877F2; }
+.tw { background-color: #000000; }
+.li { background-color: #0A66C2; }
+
+/* Copy Link Section */
+.copy-link-section {
+  display: flex;
+  gap: 10px;
+}
+.copy-link-section input {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  background-color: #f8f9fa;
+}
+.copy-link-section button {
+  padding: 10px 15px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+            </style>
+
+<p class="w3-text-gray w3-small">{{ page.first-100 }} <span id="dots">...</span></p>
+<div id="openShareBtn" class="share-trigger-btn" style="border-radius: 15px; margin: 12px 0px; width: fit-content;">
+  <div class="w3-col" style="padding-top: 2px; width: 26px;">
+  <svg width="16px" height="16px" viewBox="0 0 0.66 0.66" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M.578.247V.083m0 0H.413m.165 0L.331.33M.276.083H.214c-.046 0-.069 0-.087.009a.1.1 0 0 0-.036.036C.083.145.083.168.083.214v.231c0 .046 0 .069.009.087a.1.1 0 0 0 .036.036c.017.01.04.01.086.01h.231c.046 0 .069 0 .087-.009A.1.1 0 0 0 .568.533c.01-.018.01-.041.01-.087V.385" stroke="#000" stroke-width=".055" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </div>
+<div class="w3-rest w3-tiny" style="padding-top: 4px;"> Share</div> 
+</div>
+
+<!-- The Modal Overlay -->
+<div id="shareModal" class="share-modal-overlay">
+  <!-- The Modal Content -->
+  <div class="share-modal-content">
+    
+    <div class="share-modal-header">
+      <h3>Share via</h3>
+      <span class="close-modal" id="closeShareBtn">&times;</span>
+    </div>
+    
+    <div class="share-options">
+      <!-- These links will be populated by JavaScript -->
+      <a href="#" id="shareWa" target="_blank" class="w3-button share-btn wa">WhatsApp</a>
+      <a href="#" id="shareFb" target="_blank" class="w3-button share-btn fb">Facebook</a>
+      <a href="#" id="shareTw" target="_blank" class="w3-button share-btn tw">X (Twitter)</a>
+      <a href="#" id="shareLi" target="_blank" class="w3-button share-btn li">LinkedIn</a>
+    </div>
+
+    <div class="copy-link-section">
+      <input type="text" id="pageUrlInput" readonly>
+      <button id="copyLinkBtn">Copy Link</button>
+    </div>
+
+  </div>
+</div>
+
+        </div>
+
+        <script>
+          document.addEventListener("DOMContentLoaded", function() {
+            // 1. Get Elements
+            const modal = document.getElementById("shareModal");
+            const openBtn = document.getElementById("openShareBtn");
+            const closeBtn = document.getElementById("closeShareBtn");
+            const copyBtn = document.getElementById("copyLinkBtn");
+            const urlInput = document.getElementById("pageUrlInput");
+          
+            // 2. Get Current Page Info
+            // encodeURIComponent ensures special characters in your URL don't break the share links
+            const pageUrl = encodeURIComponent(window.location.href); 
+            const pageTitle = encodeURIComponent(document.title);
+          
+            // 3. Set up the working Share Links dynamically
+            document.getElementById("shareWa").href = `https://api.whatsapp.com/send?text=${pageTitle}%20${pageUrl}`;
+            document.getElementById("shareFb").href = `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`;
+            document.getElementById("shareTw").href = `https://twitter.com/intent/tweet?url=${pageUrl}&text=${pageTitle}`;
+            document.getElementById("shareLi").href = `https://www.linkedin.com/sharing/share-offsite/?url=${pageUrl}`;
+            
+            // Set the visual URL input for the copy section
+            urlInput.value = window.location.href;
+          
+            // 4. Modal Open/Close Logic
+            openBtn.onclick = function() {
+              modal.style.display = "flex";
+            }
+            
+            closeBtn.onclick = function() {
+              modal.style.display = "none";
+            }
+            
+            // Close modal if user clicks anywhere outside the white box
+            window.onclick = function(event) {
+              if (event.target == modal) {
+                modal.style.display = "none";
+              }
+            }
+          
+            // 5. Copy Link Logic
+            copyBtn.onclick = function() {
+              // Select the text field
+              urlInput.select();
+              urlInput.setSelectionRange(0, 99999); // For mobile devices
+          
+              // Copy to clipboard using modern API
+              navigator.clipboard.writeText(urlInput.value).then(() => {
+                // Temporarily change button text to show success
+                copyBtn.innerText = "Copied!";
+                setTimeout(() => { copyBtn.innerText = "Copy Link"; }, 2000);
+              }).catch(err => {
+                console.error("Failed to copy: ", err);
+              });
+            }
+          });
+          </script>
+       
+    
+    
+
+    <div class="w3-row w3-margin-top"  id="more">
+      <div class="w3-round-xlarge w3-padding w3-small" style="background-image: linear-gradient(#f5f5f5, #ffffff);">
+       {{ content }} 
+       </div>
+       
+
+            
+
+    </div>
+    <div class="w3-row w3-center">
+<b class="w3-margin-bottom w3-hover-text-teal w3-center w3-button w3-hover-white" onclick="myFunction()" id="myBtn">Continue Reading</b>
+</div>    
+</div>
+<div class="HR"></div>
+</div>
+</div>
+</div>
+
+
+  <!--Home Nav 2-->
+
+<div id="Main" class="w3-row w3-text-gray w3-white" style="box-shadow: 0 4px 20px -12px rgba(0,0,0,0.19);
+  border-radius: 0px 0px 15px 15px; z-index: 44; position: -webkit-sticky;
+position: sticky;
+top:63px;">
+  <div class="w3-row slider-container w3-content w3-padding" style="--slide-width: fit-content; --slide-height: fit-content;">
+    <button class="slider-btn prev-btn w3-hide" aria-label="Previous">‹</button>
+    <div class="slider-track">
+       
+     
+      
+<div id="Main"  class="slide w3-center  w3-small">
+          <a href="{{site.url }}/golden-triangle-honeymoon-tour-packages.html">
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="30px" height="30px" viewBox="0 0 450.000000 450.000000" preserveAspectRatio="xMidYMid meet">
+
+<g transform="translate(0.000000,450.000000) scale(0.100000,-0.100000)" stroke="none">
+<path d="M2380 4018 c-57 -10 -119 -55 -155 -112 l-30 -49 -3 -199 c-3 -195 -3 -198 17 -198 12 0 21 6 22 13 0 6 2 91 2 187 2 190 6 206 63 263 56 57 61 57 508 57 378 0 414 -2 451 -19 48 -22 79 -54 100 -103 12 -29 15 -78 15 -218 0 -173 1 -180 20 -180 19 0 20 7 20 190 0 211 -6 239 -63 298 -70 73 -59 71 -516 74 -225 2 -428 0 -451 -4z"/>
+<path d="M1160 3569 c-50 -15 -88 -46 -110 -89 -18 -35 -20 -57 -18 -192 l2 -153 6 155 c6 177 17 208 86 247 38 22 46 23 380 23 377 0 393 -2 434 -61 13 -17 28 -50 36 -72 13 -44 18 -31 8 21 -8 38 -47 83 -94 108 -32 17 -63 19 -365 21 -203 1 -343 -2 -365 -8z"/>
+<path d="M2116 3318 c-44 -15 -74 -36 -120 -82 -68 -67 -91 -108 -106 -187 -14 -71 -13 -1918 0 -1990 26 -138 120 -245 250 -283 47 -14 133 -16 665 -16 588 0 613 1 671 20 77 27 143 76 183 136 64 97 62 48 59 1160 l-3 1009 -28 53 c-38 72 -106 138 -175 170 l-57 27 -640 2 c-623 2 -642 1 -699 -19z m519 -825 c31 -10 68 -35 103 -68 l53 -53 48 48 c103 103 286 122 414 43 99 -62 159 -175 158 -297 -1 -126 -60 -282 -154 -413 -61 -85 -215 -259 -327 -370 -85 -86 -119 -113 -139 -113 -21 0 -56 31 -175 152 -242 249 -363 419 -417 587 -27 84 -30 106 -26 177 11 192 147 322 338 323 46 1 95 -6 124 -16z"/>
+<path d="M2431 2376 c-87 -31 -150 -141 -137 -239 23 -173 140 -353 404 -620 l96 -98 81 83 c242 250 354 407 399 557 55 186 -38 331 -212 331 -82 0 -139 -41 -194 -138 -52 -90 -101 -95 -142 -13 -35 68 -74 111 -121 132 -46 21 -124 23 -174 5z"/>
+<path d="M965 3008 c-68 -24 -131 -84 -165 -156 -20 -42 -20 -58 -18 -870 l3 -827 22 -42 c30 -58 59 -89 112 -121 l46 -27 411 -3 411 -3 -13 63 c-11 50 -14 269 -14 1031 l0 967 -382 -1 c-243 0 -394 -4 -413 -11z"/>
+<path d="M1010 835 c0 -18 35 -63 65 -84 69 -47 174 -19 214 57 l12 22 -130 0 c-71 0 -136 3 -145 6 -9 3 -16 3 -16 -1z"/>
+<path d="M1737 800 c33 -57 105 -86 170 -68 l36 10 -44 44 c-43 44 -44 44 -112 44 l-68 0 18 -30z"/>
+<path d="M2175 613 c18 -75 102 -134 189 -134 30 0 67 6 84 15 46 24 112 107 112 142 0 2 -88 4 -196 4 l-196 0 7 -27z"/>
+<path d="M3052 613 c37 -86 104 -133 187 -133 87 0 152 43 185 123 l15 37 -199 0 -200 0 12 -27z"/>
+</g>
+</svg>
+
+              <br>
+             Honeymoon</a>
+      </div>
+
+      <div id="Main"  class="slide w3-center  w3-small" style="padding-left: 30px;">
+         <a href="{{site.url }}/golden-triangle-solo-tour-packages.html">
+     <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="30px" height="30px" viewBox="0 0 153.000000 162.000000"
+ preserveAspectRatio="xMidYMid meet">
+
+<g transform="translate(0.000000,162.000000) scale(0.100000,-0.100000)"
+stroke="none">
+<path d="M739 1405 c-53 -29 -62 -111 -16 -153 37 -34 97 -33 132 3 19 18 25
+35 25 69 0 37 -5 48 -31 70 -34 29 -71 32 -110 11z"/>
+<path d="M492 1293 c-20 -18 -82 -149 -82 -175 0 -7 -12 -41 -26 -75 -25 -59
+-26 -64 -11 -87 17 -26 105 -61 146 -58 l24 2 -5 -99 c-5 -95 -7 -103 -46
+-170 -23 -38 -42 -79 -42 -90 0 -18 -6 -21 -46 -21 -39 0 -53 6 -85 35 -54 49
+-127 83 -207 97 -111 19 -103 46 -100 -314 l3 -313 102 -3 102 -3 14 33 c43
+102 189 164 504 213 251 39 309 54 328 85 9 15 -51 48 -129 71 -140 42 -322
+90 -363 96 l-42 6 50 78 c30 49 49 91 50 111 1 18 4 46 8 61 l6 28 39 -47 c44
+-52 106 -222 86 -234 -6 -4 42 -22 107 -40 185 -51 252 -96 224 -149 -24 -44
+-92 -64 -362 -106 -254 -39 -366 -75 -435 -140 -19 -18 -34 -40 -34 -49 0 -15
+52 -16 628 -14 l627 3 0 345 0 345 -48 3 c-58 4 -177 -28 -256 -68 -32 -16
+-83 -52 -113 -79 l-56 -51 -95 0 -94 0 -6 43 c-10 72 -45 169 -82 232 -31 50
+-35 65 -30 97 5 26 2 44 -6 54 -22 26 -68 154 -58 160 9 5 29 -35 53 -106 10
+-29 24 -41 88 -75 65 -33 78 -37 92 -26 33 28 19 51 -50 83 -61 29 -68 35 -91
+86 -29 67 -31 73 -17 78 5 3 18 -10 26 -28 l17 -33 0 36 c1 27 -6 44 -26 64
+-25 24 -33 27 -80 23 -50 -4 -53 -3 -53 18 0 12 -12 36 -26 53 -20 25 -34 31
+-64 31 -22 0 -46 -7 -58 -17z m-204 -900 c-3 -15 -15 -18 -83 -18 -68 0 -80 3
+-83 18 -3 15 6 17 83 17 77 0 86 -2 83 -17z m40 -76 c3 -16 -3 -18 -49 -15
+-52 3 -77 22 -42 31 40 11 88 2 91 -16z m1011 -100 c18 -22 2 -27 -81 -27 -58
+0 -78 3 -78 13 0 23 11 27 80 27 44 0 71 -5 79 -13z"/>
+</g>
+</svg>
+
+
+              <br>
+              Solo Tours</a>
+      </div>
+
+      <div id="Main"  class="slide w3-center  w3-small" style="padding-left: 30px;">
+        <a href="{{site.url }}/golden-triangle-adventure-tour-packages.html">
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"><path d="M18.525 10.575c.097.432.169.832.15 1.275l.132-.013c.316-.018.546-.026.801.177.239.262.337.406.347.763-.016.337-.045.526-.248.802-.209.147-.334.18-.581.22l.025.131.115.605.042.219q.122.633.231 1.269c.036.185.036.185.105.395.13.444.19.905.265 1.361.106.644.224 1.282.363 1.919.082.382.151.766.218 1.151l.04.224c.062.355.113.69.096 1.051h.15q.057.337.112.675l.033.191a6 6 0 0 1 .08 1.159c-.185.116-.276.152-.497.131-.179-.055-.179-.055-.329-.205-.148-.305-.202-.619-.255-.952l-.028-.168-.087-.53a29 29 0 0 0-.402-2.097 18 18 0 0 1-.216-1.161l-.04-.235c-.06-.364-.114-.711-.096-1.082h-.15l-.046-.281-.17-1.036-.073-.448-.106-.645-.032-.201a8 8 0 0 0-.247-1.065l-.156.049-.205.063-.203.063c-.188.051-.188.051-.413.051v.15c-1.868.576-1.868.576-2.848.082l-.152-.082v-.15l-.206-.066a3.6 3.6 0 0 1-.544-.234c.115.261.216.441.422.642.19.195.23.292.253.558h.15l.003.19c.029.676.161 1.121.597 1.639.196.257.307.535.432.833.09.183.173.276.318.414.098.157.183.319.27.482.103.195.103.195.227.381.233.375.354.677.375 1.12l.007.144.021.497.018.395q.024.545.04 1.09.007.226.017.453c.069 1.637.069 1.637-.375 2.187-.238.238-.458.241-.783.253-.341-.011-.587-.043-.867-.253-.307-.436-.267-.931-.277-1.444l-.008-.288a87 87 0 0 1-.016-2.843h-.15l-.225-.441-.127-.248c-.097-.211-.097-.211-.097-.361h-.15l-.375-.675a9 9 0 0 0-.234 1.533c-.075.788-.494 1.488-1.012 2.076a4 4 0 0 0-.453.712 9 9 0 0 1-.457.708c-.105.152-.105.152-.168.371h-.15l-.037.164c-.165.31-.394.448-.713.586-.393.088-.727-.011-1.073-.206-.211-.155-.277-.295-.352-.544-.074-.5.037-.92.3-1.35l.15-.075a8 8 0 0 0 .216-.394c.157-.295.316-.552.534-.806a28 28 0 0 0 .3-.45l.111-.155.119-.169.11-.154c.36-.647.407-1.342.48-2.064l.059-.558c.197-1.165.197-1.165-.129-2.226v-.225h-.15c-.401-1.05-.344-2.082-.075-3.15l.075-.15h.15l.047-.188c.112-.284.252-.484.441-.721.121-.148.121-.148.243-.348.321-.321.743-.447 1.186-.502.61.078.964.231 1.367.705.09.155.09.155.09.455h.15v.525l.192.061c.268.093.523.2.783.314v.15h.75v-.15l1.201-.344.195-.056q.238-.066.479-.125l-.108-.253c-.13-.35-.223-.722-.192-1.097.268-.356.517-.295.9-.15m5.025-6.188c.225.037.225.037.35.163.123.215.126.35.122.597l-.002.243-.006.253-.003.256-.011.626.3.075.155-.197c.188-.227.396-.412.623-.599.134-.11.134-.11.282-.278.174-.157.283-.19.516-.202.173.07.173.07.3.15.035.207.049.324 0 .525-.174.231-.385.417-.6.609l-.337.31-.152.136c-.14.183-.132.295-.11.519l.169-.004q.378-.007.755-.011l.265-.006.254-.002.235-.004c.198.026.198.026.335.125.135.194.116.346.087.575-.258.172-.353.168-.657.165l-.254-.002-.265-.004-.268-.002-.655-.007c-.008.291-.004.419.197.637l.124.135c.237.234.496.437.757.643.174.227.143.407.122.684-.173.109-.277.151-.483.145-.258-.094-.381-.245-.567-.445l-.23-.188a3.2 3.2 0 0 1-.52-.563l-.375.075.002.155.007.694.004.244.002.234.002.215c-.02.189-.02.189-.17.414h-.225v.15c-.274-.094-.358-.125-.525-.375-.024-.191-.024-.191-.031-.416l-.009-.244-.007-.254-.009-.257q-.011-.314-.019-.629c-.289.038-.43.094-.625.309l-.134.142-.271.298c-.211.223-.343.359-.639.456-.206-.005-.206-.005-.431-.155-.037-.248-.037-.248 0-.525.159-.188.159-.188.375-.375a12 12 0 0 0 .225-.263 5 5 0 0 1 .441-.464c.193-.171.193-.171.159-.473l-.175.004q-.393.007-.785.011l-.276.006-.264.002-.244.004c-.206-.027-.206-.027-.344-.129-.087-.123-.087-.123-.12-.311.033-.188.033-.188.157-.31.22-.128.361-.128.615-.124l.254.002.263.006.267.003q.326.004.652.011c.014-.181.014-.181 0-.375-.167-.153-.167-.153-.375-.3a29 29 0 0 1-.375-.45A21 21 0 0 0 21 6.075c-.075-.075-.075-.075-.08-.342l.005-.258c.175-.11.279-.151.487-.145.25.094.328.233.487.445a29 29 0 0 0 .45.375l.375.375.15.075.15-.075.003-.161.02-.721.005-.253.008-.243.006-.224c.053-.326.152-.482.482-.537"/><path d="m9.675 10.275.249.095c.672.267.672.267.876.505a8 8 0 0 1-.337.619l-.096.161-.092.12h-.15c-.149.558-.17 1.074-.164 1.65l.001.269c.005.614.032 1.222.086 1.833l.002.223c-.15.15-.15.15-.302.168l-.186-.001h-.206l-.216-.003h-.21c-1.123-.007-1.123-.007-1.355-.239-.05-.174-.05-.174-.094-.389l-.049-.233-.049-.244-.099-.478-.043-.215c-.025-.162-.025-.162-.116-.239-.158-1.075-.333-2.293.15-3.3l.098-.206c.555-.74 1.592-.374 2.302-.094M14.4 6.752c.221.227.375.422.375.75h.15c.084.252.085.447.084.713l.001.26c-.01.225-.01.225-.085.45h-.15l-.056.206a1.1 1.1 0 0 1-.394.544h-.15L14.1 9.9c-.637.297-1.214.259-1.872.071l-.153-.071L12 9.675a7 7 0 0 0-.3-.15c-.223-.174-.263-.323-.3-.6h-.15c-.084-.252-.085-.447-.084-.713l-.001-.26c.01-.227.01-.227.085-.452h.15l.019-.164c.089-.332.233-.512.53-.69.847-.44 1.642-.457 2.451.104"/></svg>
+             <br>
+             Adventure</a>
+     </div>
+
+ <div id="Main"  class="slide w3-center  w3-small" style="padding-left: 30px;">
+         <a href="{{site.url }}/golden-triangle-family-tour-packages.html">
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"><path d="m18.256 11.895.374-.001.779.001q.496.002.992-.001h.77l.365-.001c1.162-.004 2.124.145 2.991.974l.384.392.194.197a22 22 0 0 1 .959 1.04c.143.163.294.315.449.465.255.252.493.512.725.785.157.175.324.337.493.5.347.346.548.616.577 1.116-.016.427-.21.658-.497.961a1.3 1.3 0 0 1-1.031.168c-.444-.189-.778-.548-1.124-.876-.273-.257-.563-.49-.856-.725-.27-.224-.521-.465-.771-.71-.211-.155-.371-.182-.629-.206-.14.239-.169.416-.171.692l-.003.24-.001.262-.002.277-.004.752-.005.786-.009 1.488-.01 1.694-.02 3.485-2.284.004-1.061.002-1.023.002-.391.001-.546.001-.165.001c-.372-.001-.372-.001-.456-.084-.023-.292-.021-.584-.023-.877l-.007-.248c-.004-.465 0-.77.33-1.126a13 13 0 0 1 .432-.379c.31-.269.593-.566.88-.858.383-.39.767-.771 1.185-1.123.265-.236.552-.513.598-.877.019-.451.019-.451-.166-.85-.282-.23-.537-.347-.905-.337-.437.145-.744.379-1.092.675l-.318.263-.16.133c-1.214 1.006-2.318 1.889-3.978 1.777-1.07-.185-1.806-.761-2.614-1.44q-.405-.337-.812-.669l-.15-.124c-.547-.45-.547-.45-1.224-.617-.32.055-.478.101-.703.337-.221.339-.266.611-.197 1.012.172.32.373.549.675.75v.15l.126.052c.225.127.379.287.56.472l.11.112.348.354.456.463.111.112a12 12 0 0 0 .807.738c.107.098.107.098.182.248v1.95H4.725a16 16 0 0 1 .207-1.586l.04-.215.086-.458.135-.725.335-1.8.284-1.526.134-.714.081-.438.038-.2c.06-.325.107-.631.085-.963-.077-.09-.077-.09-.232-.107-.334.049-.525.251-.775.468l-.32.268-.163.137q-.362.302-.731.593l-.126.102c-.334.264-.638.468-1.065.521-.391-.049-.688-.255-.938-.558a1.96 1.96 0 0 1-.075-.9c.169-.338.418-.577.686-.836.141-.141.272-.288.402-.439.209-.242.428-.467.656-.691q.204-.21.394-.434c.209-.242.428-.468.657-.691.137-.141.263-.288.389-.439.374-.432.759-.739 1.316-.894a9 9 0 0 1 .62-.021l.184-.001.598-.001.417-.001h.874q.559 0 1.117-.003l.862-.001.412-.001h.577l.17-.002c.596.006 1.046.188 1.482.606l.195.184.142.141c.234-.18.439-.359.628-.586 1.077-1.249 2.131-1.551 3.753-1.544m-5.806 4.38c-.597.775-.768 1.503-.675 2.475a2.97 2.97 0 0 0 1.234 1.774c.749.404 1.51.485 2.333.277.693-.237 1.237-.746 1.612-1.368.295-.667.334-1.437.155-2.141-.314-.813-.808-1.307-1.584-1.692-1.05-.444-2.295-.123-3.075.675M21.975 5.1c.641.52 1.116 1.299 1.223 2.125q.015.264.01.529l-.002.188c-.02.754-.271 1.349-.706 1.958l-.159.23c-.482.553-1.299.987-2.028 1.062-1.113.073-1.966-.111-2.838-.842-.657-.61-1.07-1.408-1.141-2.305-.034-1.092.298-1.942 1.038-2.738 1.301-1.245 3.176-1.254 4.603-.207M11.062 6.566c.703.517 1.217 1.158 1.434 2.016.143.953-.004 1.779-.543 2.579a3.35 3.35 0 0 1-2.058 1.257c-.913.104-1.733-.088-2.47-.643a3.33 3.33 0 0 1-1.2-2.1 3.3 3.3 0 0 1 .682-2.384c1.026-1.192 2.779-1.577 4.155-.725"/><path d="M18.825 22.125v.225c-.123.121-.123.121-.293.254-.8.653-.8.653-1.164 1.585-.027.438-.013.874.031 1.31l-.15.075a63 63 0 0 1-.019-.872l-.008-.249c-.006-.465-.002-.769.326-1.129.137-.135.137-.135.277-.248.354-.297.675-.622.998-.952"/></svg>
+              <br>
+              Family</a>
+      </div>
+
+ 
+    
+    
+
+    </div>
+    <button class="slider-btn next-btn w3-hide" aria-label="Next">›</button>
+  </div>
+  </div>
+     <div>
+     <div class="w3-row">
+      
+        <div>
+
+<!--Home Layout-->
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+  
+
+
+
+  <div class="w3-large w3-content w3-padding w3-text-dark-gray w3-margin-top">
+    <div class="w3-col w3-right" style="width: 90px;">
+      <a  href="/golden-triangle-tour-packages.html" aria-label="View all Golden Triangle tour packages">
+        <div class="w3-row w3-right w3-right-align w3-text-dark-gray w3-small">
+         
+          <div class="w3-col w3-right" style="width: 30px; padding:13px 6px;">
+            <div class="w3-teal w3-round-xxlarge" style="padding-right:5px; padding-top:4px; width: 22px; height: 22px;">
+            <svg aria-hidden="true" width="12px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+              <path fill="#ffffff" d="M471.1 297.4C483.6 309.9 483.6 330.2 471.1 342.7L279.1 534.7C266.6 547.2 246.3 547.2 233.8 534.7C221.3 522.2 221.3 501.9 233.8 489.4L403.2 320L233.9 150.6C221.4 138.1 221.4 117.8 233.9 105.3C246.4 92.8 266.7 92.8 279.2 105.3L471.2 297.3z" />
+            </svg>
+</div>
+          </div>
+          <div class="w3-rest" style="padding:16px 6px;">View All</div>
+
+        </div>
+      </a>
+    </div>
+    <div class="w3-rest">
+    <h2 class="w3-large">
+      <strong>Golden Triangle Tour Packages</strong>
+    </h2>
+  </div> 
+  
+  </div>
+  <br>
+
+
+  <div class="w3-row">
+
+
+
+
+
+   <div class="w3-content " >
+  
+    
+    <div class="w3-row w3-row-padding" style="margin: 0px 0px;">
+
+
+
+
+
+        {% for post in site.tour %}
+        {% if post.category contains "Goldan" %}
+        <!--1-->
+        <div class="w3-third" style="margin-bottom: 30px; height: fit-content;">
+          <a class="w3-row" style="display: block; text-decoration: none;"
+            href="{{ site.url }}{{ post.url | relative_url }}">
+            <div class="w3-row" style="height: 300px; width:100%px;">
+              <img class="w3-border w3-border-light-gray" alt="{{ post.imgh1 }}"
+                src="{{ site.url }}/assets/images/{{ post.img1 }}"
+                style="border-radius: 15px; object-fit: cover; overflow: hidden; height: 100%; width: 100%;">
+              
+            </div>
+    
+            <div class="w3-row">
+              <div class="w3-row w3-margin-top">
+                <div class="w3-left w3-text-gray w3-small" style="font-weight: 700;">
+                    {{ post.duration }}</div>
+                <div class="w3-right w3-text-gray w3-small">
+                  
+                </div>
+              </div>
+    
+              <h3 class="w3-text-dark-gray"
+                style="font-size: 13px; margin: 8px 0px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; font-weight: 500; -webkit-box-orient: vertical; font-size:15px;">
+                {{ post.title }}
+              </h3>
+    <p class="w3-small w3-text-dark-gray">From : {{ post.from_location }} | By : {{ post.tour_by }}</p>
+              <div class="w3-row w3-small w3-text-gray w3-round-large w3-margin-bottom"
+                style="padding: 6px 12px; background-color:#f8f9fa;">
+                Destinations: {{ post.destinations }} Etc.
+              </div>
+    
+              <b class="w3-large">INR {{ post.price }} <span class="w3-small w3-text-gray">{{
+                  post.price_per }}</span> </b>
+              <br><strike class="w3-text-gray">INR {{ post.price_x }}</strike>
+            </div>
+          </a>
+    
+          <div class="w3-row w3-margin-top">
+            <div class="w3-col" style="width: 50px;">
+              <a href="tel:+918219471645" aria-label="Call Now To Enquire"
+                class="w3-button w3-light-gray w3-small w3-border w3-border-sand"
+                style="width: 34px; height: 34px; padding: 0px; border-radius: 30px; display: inline-flex; align-items: center; justify-content: center;">
+                <svg width="12px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                  <path
+                    d="M160.2 25C152.3 6.1 131.7-3.9 112.1 1.4l-5.5 1.5c-64.6 17.6-119.8 80.2-103.7 156.4 37.1 175 174.8 312.7 349.8 349.8 76.3 16.2 138.8-39.1 156.4-103.7l1.5-5.5c5.4-19.7-4.7-40.3-23.5-48.1l-97.3-40.5c-16.5-6.9-35.6-2.1-47 11.8l-38.6 47.2C233.9 335.4 177.3 277 144.8 205.3L189 169.3c13.9-11.3 18.6-30.4 11.8-47L160.2 25z" />
+                </svg>
+              </a>
+            </div>
+            <div class="w3-rest">
+              <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-small w3-teal"
+                style="border-radius: 30px; padding-left: 40px; padding-right: 40px;">
+                Request Callback
+              </button>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+
+
+
+
+        <!--View All-->
+
+
+
+
+
+
+
+
+
+
+      </div>
+
+     
+    </div>
+  </div>
+
+
+<!--conclusion-->
+      {% for block in page.conclusion %}
+  <section class="w3-content w3-container conclusion-section">
+    {% if block.title %}
+      <h2 class="w3-xlarge w3-text-dark-gray">{{ block.title }}</h2>
+    {% endif %}
+
+    {% for item in block.content %}
+      {% if item.p %}
+        <p class="w3-text-gray">{{ item.p }}</p>
+      {% endif %}
+    {% endfor %}
+  </section>
+{% endfor %}
+     <!--faq-->
+
+<!--Includes-->
+{% include card1.html %}
+{% include reviews.html %}
+{% include faq.html %}
+{% include about.html %}
+{% include team.html %}
+
+
+ 
+  
+
+   <!-- Footer -->
+  
+{% include footer.html %}
+  <!-- Swiper JS -->
+  
+<script>
+      document.querySelectorAll(".slider-container").forEach(c => { let t = c.querySelector(".slider-track"), p = c.querySelector(".prev-btn"), n = c.querySelector(".next-btn"), u = () => { p.classList.toggle("disabled", t.scrollLeft <= 1), n.classList.toggle("disabled", t.scrollLeft + t.clientWidth >= t.scrollWidth - 1) }; n.addEventListener("click", () => { t.scrollBy({ left: t.clientWidth, behavior: "smooth" }) }), p.addEventListener("click", () => { t.scrollBy({ left: -t.clientWidth, behavior: "smooth" }) }), t.addEventListener("scroll", u), window.addEventListener("resize", u), u() });
+    </script>
+  <script>
+    // Used to toggle the menu on small screens when clicking on the menu button
+    function myFunction() {
+      var x = document.getElementById("navDemo");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else {
+        x.className = x.className.replace(" w3-show", "");
+      }
+    }
+  </script>
+<script>
+  function myFunction() {
+    var dots = document.getElementById("dots");
+    var moreText = document.getElementById("more");
+    var btnText = document.getElementById("myBtn");
+  
+    if (dots.style.display === "none") {
+      // STATE: COLLAPSED
+      dots.style.display = "inline";
+      moreText.style.display = "none";
+      btnText.innerHTML = "Continue Reading"; 
+      
+      // Remove the fixed class so it jumps back below the paragraph
+      btnText.classList.remove("fixed-bottom");
+      
+      // Scrolls to the absolute top of the page smoothly
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      
+    } else {
+      // STATE: EXPANDED
+      dots.style.display = "none";
+      moreText.style.display = "inline";
+      btnText.innerHTML = "Read less"; 
+      
+      // Add the fixed class to lock it to the bottom of the screen
+      btnText.classList.add("fixed-bottom");
+    }
+  }
+  </script>
+    </body>
+    </html>
