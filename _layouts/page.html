@@ -358,38 +358,7 @@
 
 <p class="w3-text-gray w3-small">{{ page.first-100 }} <span id="dots">...</span></p>
 
-<div id="openShareBtn" class="share-trigger-btn" style="border-radius: 15px; margin: 12px 0px; width: fit-content;">
-  <div class="w3-col" style="padding-top: 2px; width: 26px;">
-  <svg width="16px" height="16px" viewBox="0 0 0.66 0.66" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M.578.247V.083m0 0H.413m.165 0L.331.33M.276.083H.214c-.046 0-.069 0-.087.009a.1.1 0 0 0-.036.036C.083.145.083.168.083.214v.231c0 .046 0 .069.009.087a.1.1 0 0 0 .036.036c.017.01.04.01.086.01h.231c.046 0 .069 0 .087-.009A.1.1 0 0 0 .568.533c.01-.018.01-.041.01-.087V.385" stroke="#000" stroke-width=".055" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  </div>
-<div class="w3-rest w3-tiny" style="padding-top: 4px;"> Share</div> 
-</div>
 
-<!-- The Modal Overlay -->
-<div id="shareModal" class="share-modal-overlay">
-  <!-- The Modal Content -->
-  <div class="share-modal-content">
-    
-    <div class="share-modal-header">
-      <h3>Share via</h3>
-      <span class="close-modal" id="closeShareBtn">&times;</span>
-    </div>
-    
-    <div class="share-options">
-      <!-- These links will be populated by JavaScript -->
-      <a href="#" id="shareWa" target="_blank" class="w3-button share-btn wa">WhatsApp</a>
-      <a href="#" id="shareFb" target="_blank" class="w3-button share-btn fb">Facebook</a>
-      <a href="#" id="shareTw" target="_blank" class="w3-button share-btn tw">X (Twitter)</a>
-      <a href="#" id="shareLi" target="_blank" class="w3-button share-btn li">LinkedIn</a>
-    </div>
-
-    <div class="copy-link-section">
-      <input type="text" id="pageUrlInput" readonly>
-      <button id="copyLinkBtn">Copy Link</button>
-    </div>
-
-  </div>
-</div>
 
         </div>
 
@@ -462,43 +431,87 @@
             
 
     </div>
-    <div class="w3-row w3-center">
-<b class="w3-margin-bottom w3-hover-text-teal w3-center w3-button w3-hover-white" onclick="myFunction()" id="myBtn">Continue Reading</b>
+    <div class="w3-row w3-center" style="margin-top: 16px;">
+      <div class="w3-col" style="width: 110px;">
+        <div style="border-radius: 15px; margin: 12px 0px; width: fit-content;">
+          <div class="w3-col" style="padding-top: 2px; width: 26px;">
+            <svg width="18" height="18" viewBox="0 0 0.45 0.45" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M.037.263c0-.071 0-.106.022-.128S.117.112.188.112h.075c.071 0 .106 0 .128.022s.021.058.021.129 0 .106-.022.128S.333.412.263.412H.188C.117.412.082.412.06.39S.037.333.037.263ZM.3.112C.3.077.3.059.289.048S.26.037.225.037s-.053 0-.064.011S.15.077.15.112" stroke="#222" stroke-width=".035"></path><path d="M.319.169a.019.019 0 1 1-.037 0 .019.019 0 0 1 .037 0m-.15 0a.019.019 0 1 1-.037 0 .019.019 0 0 1 .037 0" fill="#222"></path></svg>
+          </div>
+        <div class="w3-rest w3-small" style="padding-top: 3px;"> 10+ Tours</div> 
+        </div>
+      </div>
+<div class="w3-col" style="width: 100px;">
+      <div id="openShareBtn" class="share-trigger-btn" style="border-radius: 15px; margin: 12px 0px; width: fit-content;">
+        <div class="w3-col" style="padding-top: 2px; width: 26px;">
+        <svg width="16px" height="16px" viewBox="0 0 0.66 0.66" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M.578.247V.083m0 0H.413m.165 0L.331.33M.276.083H.214c-.046 0-.069 0-.087.009a.1.1 0 0 0-.036.036C.083.145.083.168.083.214v.231c0 .046 0 .069.009.087a.1.1 0 0 0 .036.036c.017.01.04.01.086.01h.231c.046 0 .069 0 .087-.009A.1.1 0 0 0 .568.533c.01-.018.01-.041.01-.087V.385" stroke="#000" stroke-width=".055" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      <div class="w3-rest w3-small" style="padding-top: 3px;"> Share</div> 
+      </div>
+      
+      <!-- The Modal Overlay -->
+      <div id="shareModal" class="share-modal-overlay">
+        <!-- The Modal Content -->
+        <div class="share-modal-content">
+          
+          <div class="share-modal-header">
+            <h3>Share via</h3>
+            <span class="close-modal" id="closeShareBtn">&times;</span>
+          </div>
+          
+          <div class="share-options">
+            <!-- These links will be populated by JavaScript -->
+            <a href="#" id="shareWa" target="_blank" class="w3-button share-btn wa">WhatsApp</a>
+            <a href="#" id="shareFb" target="_blank" class="w3-button share-btn fb">Facebook</a>
+            <a href="#" id="shareTw" target="_blank" class="w3-button share-btn tw">X (Twitter)</a>
+            <a href="#" id="shareLi" target="_blank" class="w3-button share-btn li">LinkedIn</a>
+          </div>
+      
+          <div class="copy-link-section">
+            <input type="text" id="pageUrlInput" readonly>
+            <button id="copyLinkBtn">Copy Link</button>
+          </div>
+      
+        </div>
+      </div>
+</div>
+<div class="w3-rest">
+<button class="w3-margin-bottom w3-hover-text-teal w3-small w3-center w3-button w3-round-xxlarge w3-hover-white w3-right" style="margin-top:7px;" onclick="myFunction()" id="myBtn">Continue Reading</button>
+</div>
 </div>    
 </div>
 <div class="HR"></div>
 </div>
 </div>
-</div>
+
 
 
   <!--Home Nav 2-->
+</div>
+</div>
+  <div class="w3-row w3-white" style=" box-shadow: 0 4px 20px -12px rgba(0,0,0,0.19);
+  border-radius: 0px 0px 15px 15px; z-index: 40; position: -webkit-sticky;
+position: sticky;
+top:63px;">
+<div class="w3-content" style="padding: 12px 16px;">
+<div class="w3-col w3-right" style="width: 110px;">
+        <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-teal w3-small w3-card-4" style="border-radius: 30px; margin-top: 8px;">Enquire Now</button>
+      </div>
+<div class="w3-rest">
+              <p style="margin-top: 9px;">
+                <b class="w3-small">
+                  Get Your Coustomized {{ post.destination }} Tour Package
+               </b>
+               
+              </p>
+            </div>
+</div>
+              
+            </div>
 
-
-     <div>
-     <div class="w3-row">
-      
-        <div>
+            <div class="HR"></div>
 
 <!--Home Layout-->
-
-
-
-
-
-
-
-
-
-
- 
-
-
-  
-
-
-
-  <div class="w3-large w3-content w3-padding w3-text-dark-gray w3-margin-top">
+  <div class="w3-large w3-content w3-padding w3-text-dark-gray">
     <div class="w3-col w3-right" style="width: 90px;">
       <a  href="/golden-triangle-tour-packages.html" aria-label="View all Golden Triangle tour packages">
         <div class="w3-row w3-right w3-right-align w3-text-dark-gray w3-small">
