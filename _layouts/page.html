@@ -22,6 +22,137 @@
     "url" : "https://touristhill.in/"
 }
 </script>
+<style>
+  /* Base Article Typography */
+article {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  color: #374151; /* Dark gray for softer contrast than pure black */
+   /* Optimal line length for reading */
+  margin: 0 auto;
+  font-size: 1.125rem; /* 18px base size */
+}
+
+/* Headings */
+article h1, 
+article h2, 
+article h3, 
+article h4, 
+article h5, 
+article h6 {
+  color: #111827;
+  line-height: 1.25;
+  margin-top: 2em;
+  margin-bottom: 0.75em;
+  font-weight: 700;
+}
+
+article h1 { font-size: 2.25em; margin-top: 0; }
+article h2 { font-size: 1.5em; }
+article h3 { font-size: 1.25em; }
+article h4 { font-size: 1em; }
+
+/* Paragraphs and Lists */
+article p, 
+article ul, 
+article ol, 
+article dl {
+  margin-top: 0;
+  margin-bottom: 1.5em;
+}
+
+article ul, 
+article ol {
+  padding-left: 1.5em;
+}
+
+article li {
+  margin-bottom: 0.5em;
+}
+
+article li > ul, 
+article li > ol {
+  margin-top: 0.5em;
+  margin-bottom: 0;
+}
+
+/* Inline Elements */
+article a {
+  color: #2563eb;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  transition: color 0.2s ease;
+}
+
+article a:hover {
+  color: #1d4ed8;
+}
+
+article strong, 
+article b {
+  font-weight: 600;
+  color: #111827;
+}
+
+article em, 
+article i {
+  font-style: italic;
+}
+
+article code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  background-color: #f3f4f6;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-size: 0.875em;
+  color: #ef4444;
+}
+
+/* Blockquotes */
+article blockquote {
+  margin: 2em 0;
+  padding-left: 1.5em;
+  border-left: 4px solid #e5e7eb;
+  font-style: italic;
+  color: #4b5563;
+}
+
+/* Table Styling */
+article table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  font-size: 0.875em; /* Slightly smaller text for data density */
+  text-align: left;
+}
+
+article th, 
+article td {
+  padding: 0.75em 1em;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+article th {
+  font-weight: 600;
+  color: #111827;
+  background-color: #f9fafb;
+}
+
+article tr:last-child td {
+  border-bottom: none;
+}
+
+/* Zebra striping for wide tables */
+article tbody tr:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+article tbody tr:hover {
+  background-color: #f3f4f6;
+}
+</style>
   <style>
     #Main svg {
       fill: #757575;
@@ -458,9 +589,9 @@
     
 
     <div class="w3-row w3-margin-top"  id="more">
-      <div class="w3-round-xlarge w3-padding w3-small" style="background-image: linear-gradient(#f5f5f5, #ffffff);">
+      <article class="w3-round-xlarge w3-padding w3-small" style="background-image: linear-gradient(#f9f9f9, #ffffff);">
        {{ content }} 
-       </div>
+       </article>
        
 
             

@@ -156,13 +156,3 @@ conclusion:
     <li>Booking Early: Popular hotels like Person’s Nature Villa or DP Dreams fill up quickly during the honeymoon season.</li>
     <li>Confirm Details: Always ensure your Date and itinerary are confirmed in writing by your tour executive Person.</li>
 </ol>
-
-<h2>Conclusion</h2>
-<p>A Golden Triangle Honeymoon Tour is more than just a vacation; it is an investment in memories that will last a lifetime. By blending the structured comfort of a private cab tour with the spontaneous joy of the Himalayas, you ensure that your first trip as a married couple is perfectly balanced. From the colonial streets of Shimla to the snowy peaks of Manali, every mile of this journey is designed to celebrate your love.</p>
-
-<p>For customized quotes and bookings, feel free to contact your tour executive:</p>
-<p>Tour Executive: Person<br>
-Contact: Person<br>
-Office Address: Place</p>
-
-<p><em>The details in this guide are based on professional itineraries and traveler experiences.</em></p>
