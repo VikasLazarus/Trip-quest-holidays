@@ -297,64 +297,66 @@
   </div>
 </div>
 <script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbxuIaGTYCmTvzadcJ1qHm9qtnySIQ91D_QHlZYDAdy5Wjp3Sfqq9Hjm1A3pA61U8AZD/exec'; // Paste your Web App URL here
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxuIaGTYCmTvzadcJ1qHm9qtnySIQ91D_QHlZYDAdy5Wjp3Sfqq9Hjm1A3pA61U8AZD/exec'; 
   const thanksModal = document.getElementById('thank-you-modal');
   
-  // 1. Find EVERY form on the page with the class 'gscript-form'
   const allForms = document.querySelectorAll('.gscript-form');
 
-  // 2. Loop through each form and attach the submit listener
   allForms.forEach(form => {
     form.addEventListener('submit', e => {
       e.preventDefault(); 
       
-      // Find the specific button and error message for THIS form only
       const submitButton = form.querySelector('button[type="submit"], input[type="submit"], button');
       const errorMessage = form.querySelector('.error-message');
-      
-      // Check if this form is inside a W3 Modal
       const parentModal = form.closest('.w3-modal'); 
       
-      // UI Loading State
+      // Cache original button text so we can restore it later instead of getting stuck on "Done"
+      const originalButtonText = submitButton.innerText || submitButton.value || "Submit";
+      
+      // UI Loading State (Instant Feedback)
       submitButton.disabled = true;
       submitButton.innerText = "Sending...";
       if (errorMessage) errorMessage.style.display = "none";
       
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => response.json())
+      fetch(scriptURL, { 
+        method: 'POST', 
+        body: new FormData(form) 
+      })
+      .then(response => {
+        if (!response.ok) throw new Error("Network response was not ok");
+        return response.json();
+      })
       .then(data => {
         if (data.result === "success") {
           
-          // Reset this specific form and button
+          // 1. Instantly swap the modals for maximum perceived speed
+          if (parentModal) parentModal.style.display = "none";
+          if (thanksModal) thanksModal.style.display = "block";
+          
+          // 2. Quietly reset the form and button in the background for future use
           form.reset();
           submitButton.disabled = false;
-          submitButton.innerText = "Done";
-          
-          // If the form was inside a modal, close that specific modal
-          if (parentModal) {
-            parentModal.style.display = "none";
-          }
-          
-          // Open the universal Thanks Modal
-          thanksModal.style.display = "block";
+          submitButton.innerText = originalButtonText; 
           
         } else {
-          throw new Error(data.error);
+          throw new Error(data.error || "Unknown server error");
         }
       })
       .catch(error => {
-        console.error('Error!', error.message);
+        console.error('Submission Error:', error.message);
+        
+        // Show error message
         if (errorMessage) {
-          errorMessage.innerText = "Something went wrong. Please try again.";
+          errorMessage.innerText = "Connection error. Please check your internet and try again.";
           errorMessage.style.display = "block";
         }
+        
+        // Restore button so user can try again
         submitButton.disabled = false;
-        submitButton.innerText = "Done";
+        submitButton.innerText = originalButtonText;
       });
     });
   });
-
-
 </script>
 <script>
   // ==========================================
