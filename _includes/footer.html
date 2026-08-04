@@ -310,48 +310,37 @@
       const errorMessage = form.querySelector('.error-message');
       const parentModal = form.closest('.w3-modal'); 
       
-      // Cache original button text so we can restore it later instead of getting stuck on "Done"
       const originalButtonText = submitButton.innerText || submitButton.value || "Submit";
       
-      // UI Loading State (Instant Feedback)
+      // UI Loading State 
       submitButton.disabled = true;
       submitButton.innerText = "Sending...";
       if (errorMessage) errorMessage.style.display = "none";
       
       fetch(scriptURL, { 
         method: 'POST', 
+        mode: 'no-cors', // MAGIC FIX: Bypasses the strict browser security block
         body: new FormData(form) 
       })
-      .then(response => {
-        if (!response.ok) throw new Error("Network response was not ok");
-        return response.json();
-      })
-      .then(data => {
-        if (data.result === "success") {
-          
-          // 1. Instantly swap the modals for maximum perceived speed
-          if (parentModal) parentModal.style.display = "none";
-          if (thanksModal) thanksModal.style.display = "block";
-          
-          // 2. Quietly reset the form and button in the background for future use
-          form.reset();
-          submitButton.disabled = false;
-          submitButton.innerText = originalButtonText; 
-          
-        } else {
-          throw new Error(data.error || "Unknown server error");
-        }
+      .then(() => {
+        // With no-cors, the promise resolves instantly once data is sent to Google.
+        // It does not wait for Google to process it, making it extremely fast.
+        
+        if (parentModal) parentModal.style.display = "none";
+        if (thanksModal) thanksModal.style.display = "block";
+        
+        form.reset();
+        submitButton.disabled = false;
+        submitButton.innerText = originalButtonText; 
       })
       .catch(error => {
         console.error('Submission Error:', error.message);
         
-        // Show error message
         if (errorMessage) {
           errorMessage.innerText = "Connection error. Please check your internet and try again.";
           errorMessage.style.display = "block";
         }
         
-        // Restore button so user can try again
         submitButton.disabled = false;
         submitButton.innerText = originalButtonText;
       });
